@@ -1,0 +1,11 @@
+{
+    "name": "complaints App",
+    "version": "0.0.1",
+    "dependencies": {
+        "bootstrap": "*",
+        "vue": "*",
+        "vue-resource": "*",
+        "chart.js": "*"
+    },
+    "private": true 
+}
