@@ -35,6 +35,8 @@ block content
                         | Feedback can be posted to this address using the accompanying iPhone application. 
                         p 
                         a(href="#" class="btn btn-primary") More about Tone Analysis 
+                    .jumbotron
+                        feedback-chart(v-bind:messages="messages" canvas-id="feedbackChart")
                 .col-md-8
                     div(class="panel panel-default")
                         .panel-heading
