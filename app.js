@@ -21,9 +21,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
