@@ -1,0 +1,57 @@
+extends layout.pug
+
+block content 
+    #app 
+        .container-fluid
+            .row 
+                .col-md-12
+                    div(class="list-group-item clearfix")
+                        a(href="#addComplaintModal" class="btn btn-primary pull-right" data-toggle="modal") <i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp; Add Complaint
+                        div(id="addComplaintModal" class="modal fade")
+                            .modal-dialog
+                                .modal-content
+                                    .modal-header
+                                        button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+                                        h4(class="modal-title") Add Complaint
+                                    form
+                                        .modal-body
+                                            .form-group
+                                                label(for="Message") Message
+                                                textarea(rows="5" class="form-control" v-model="newMessage.feedback")
+                                        .modal-footer
+                                            button(class="btn btn-primary" v-on:click="postComplaint" data-dismiss="modal" aria-label="Close") Submit 
+                                
+            br
+            .row
+                .col-md-4
+                    .jumbotron
+                        p
+                            | This is a proof of concept for a simple dashboard
+                            | that displays consumers feedback organised by 'tone'. 
+                        | We calculate tone using IBM Watson Tone Analyser and 
+                        | Sentiment Analysis, through a workflow defined in Node-RED and hosted as a
+                        | microservice on the web server.
+                        p
+                        | Feedback can be posted to this address using the accompanying iPhone application. 
+                        p 
+                        a(href="#" class="btn btn-primary") More about Tone Analysis
+                    .jumbotron
+                        feedback-chart(v-bind:messages="messages" canvas-id="feedbackChart") 
+                .col-md-8
+                    div(class="panel panel-default")
+                        .panel-heading
+                            | Current Feedbacks
+                        .panel-body
+                            table(class="table table-bordered")
+                                tr
+                                    th Message
+                                    th Sentiment
+                                    th Tone
+                                transition-group(name="list")
+                                tr(v-for="msg in sortedMessages" v-bind:class="msg.css" v-bind:key="msg")
+                                    td {{ msg.message }}
+                                    td {{ msg.sentiment }}
+                                    td {{ msg.tone }}
+
+
+   
