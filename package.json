@@ -1,13 +1,18 @@
 {
-	"name": "NodejsStarterApp",
+	"name": "WatsonFeedbackBoard",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"start": "node app.js"
 	},
 	"dependencies": {
-		"express": "4.13.x",
-		"cfenv": "1.0.x"
+		"express": "4.14.0",
+		"cfenv": "1.0.x",
+        "pug": "*",
+        "bower": "*",
+        "serve-favicon": "~2.3.0",
+        "body-parser": "~1.15.2",
+        "cookie-parser": "~1.4.3"
 	},
 	"repository": {},
 	"engines": {
