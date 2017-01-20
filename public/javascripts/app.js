@@ -21,11 +21,13 @@ new Vue({
     },
     methods: {
         postComplaint: function() {
+            console.log("Beginning to post Complaint");
             if (this.newMessage.feedback == undefined || this.newMessage.feedback == "") {
                 console.error("Error POSTing complaint: You haven't defined one.");
             }
 
             this.$http.post('https://watson-feedback-api.mybluemix.net/api/feedback', this.newMessage).then((response) => {
+                console.log("Message POSTed successfully!")
                 this.newMessage = {}
                 this.fetchData()
             }, (response) => {
@@ -35,6 +37,7 @@ new Vue({
         fetchData: function() {
             console.log("Fetching Data")
             this.$http.get('https://watson-feedback-api.mybluemix.net/api/feedback').then((response) => {
+                console.log("Successful fetching!")
                 this.messages = response.body 
 
                 for (var key in this.messages) {
