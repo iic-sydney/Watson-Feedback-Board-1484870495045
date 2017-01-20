@@ -25,7 +25,7 @@ new Vue({
                 console.error("Error POSTing complaint: You haven't defined one.");
             }
 
-            this.$http.post('http://vuejs-dashboard.syd.iic.ihost.com:1880/api/complaints', this.newMessage).then((response) => {
+            this.$http.post('https://watson-feedback-api.mybluemix.net/api/feedback', this.newMessage).then((response) => {
                 this.newMessage = {}
                 this.fetchData()
             }, (response) => {
@@ -34,7 +34,7 @@ new Vue({
         },
         fetchData: function() {
             console.log("Fetching Data")
-            this.$http.get('http://vuejs-dashboard.syd.iic.ihost.com:1880/api/complaints').then((response) => {
+            this.$http.get('https://watson-feedback-api.mybluemix.net/api/feedback').then((response) => {
                 this.messages = response.body 
 
                 for (var key in this.messages) {
