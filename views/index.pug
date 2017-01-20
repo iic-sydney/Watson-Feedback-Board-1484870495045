@@ -47,8 +47,8 @@ block content
                                     th Message
                                     th Sentiment
                                     th Tone
-                                transition-group(name="list")
-                                tr(v-for="msg in sortedMessages" v-bind:class="msg.css" v-bind:key="msg")
+                                transition-group(name="list" tag="div")
+                                tr(v-for="msg in sortedMessages" v-bind:class="msg.css" v-bind:key="msg" class="list-item")
                                     td {{ msg.message }}
                                     td {{ msg.sentiment }}
                                     td {{ msg.tone }}
