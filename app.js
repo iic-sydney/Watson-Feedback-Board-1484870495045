@@ -18,7 +18,7 @@ var index = require('./routes/index');
 // create a new express server
 var app = express();
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', __dirname + 'views');
 app.set('view engine', 'pug');
 
 // serve the files out of ./public as our main files
