@@ -34,6 +34,15 @@ new Vue({
                 console.error("Error POSTing complaint: unspecified error")
             })
         },
+        flushComplaints: function() {
+            console.log("flushComplaints has been called");
+            this.$http.delete('https://watson-feedback-api.mybluemix.net/api/feedback').then((response) => {
+                console.log("Complaints deleted successfully");
+                this.fetchData();
+            }, (response) => {
+                console.error("Error on DELETE request: API error");
+            })
+        },
         fetchData: function() {
             console.log("Fetching Data")
             this.$http.get('https://watson-feedback-api.mybluemix.net/api/feedback').then((response) => {
