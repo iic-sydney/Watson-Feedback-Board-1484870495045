@@ -1,20 +1,19 @@
 doctype html
 html
-    head
-        title= title
-        link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.css')
-        link(rel='stylesheet', href='/stylesheets/style.css')
-    
-    body
-        nav(class="navbar navbar-default top-nav navbar-white clearfix")
-            .container-fluid
-                a(class="navbar-left" href="#")
-                    img(alt="Brand" src="/images/ibm_watson_color.png", width="40", height="40" style="margin: 0.4em")
-            ul(class="nav navbar-nav navbar-right")
-                <li><a href="#"><i class="glyphicon glyphicon-home" style="font-size: 20px"></i></a></li>
-        nav(class="navbar sub-nav navbar-default navbar-white clearfix")
-            p(class="navbar-text") IBM Watson Tone Analyser
-        
+  head
+    title= title
+    link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower/animate.css/animate.min.css')
+  body
+    nav(class="navbar navbar-default top-nav navbar-white clearfix")
+      .container-fluid
+        a(class="navbar-left" href="#")
+          img(alt="Brand" src="/images/ibm_watson_color.png", width="40", height="40" style="margin: 0.4em")
+        ul(class="nav navbar-nav navbar-right")
+          <li><a href="#"><i class="glyphicon glyphicon-home" style="font-size: 20px"></i></a></li>
+    nav(class="navbar sub-nav navbar-default navbar-white clearfix")
+      p(class="navbar-text") IBM Watson Alchemy API 
         block content
         script(src="/bower/vue/dist/vue.js")
         script(src="/bower/vue-resource/dist/vue-resource.js")

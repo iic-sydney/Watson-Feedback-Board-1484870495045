@@ -1,15 +1,13 @@
 body {
+  margin: 0px;
+  font: 14px Helvetica, Arial, sans-serif;
   background-image: url("/images/bg.png");
   background-repeat: repeat;
-  margin: 0 0; 
-  padding: 0 0; 
-  font: 14px Helvetica, Arial, sans-serif;
 }
 
 a {
     color: #00B7FF;
 }
-
 
 .top-nav {
   margin-bottom: 0 !important;
