@@ -24,6 +24,8 @@ app.set('view engine', 'pug');
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
+
+// Index Router
 app.use('/', index);
 
 // get the app environment from Cloud Foundry
