@@ -10,6 +10,15 @@ a {
     color: #00B7FF;
 }
 
+
+.top-nav {
+  margin-bottom: 0 !important;
+}
+
+.sub-nav {
+  border-top: 0px !important;
+}
+
 .jumbotron-white {
     background-color: white !important;
 }
